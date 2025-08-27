@@ -1,75 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>first website
-</title>
-<style>
-    body{
-        height: 800px;
-        width: 100%;
-        background: linear-gradient(teal,purple);
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        font-family: "Montserrat" sans-serif;
-        margin: 0;
-        padding:0;
-    }
-    .animated-text{
-        color: white;
-        font-size:34px;
-        font-weight: 600;
-        min-width: 230px;
-
-    }
-    .animated-text span{
-        position: relative;
-
-    }
-    .animated-text span::before{
-        content:"My email id is bekirabha369@gmail.com";
-        color:orangered;
-        animation: words 20s infinite;
-    }
-    .animated-text span::after{
-        content: '';
-        position:absolute;
-        width:calc(100%+8px);
-        height: 100%;
-        background-color: black;
-        border-left: 2px solid orangered;
-        right:-8px;
-        animation: cursor .1s infinite, typing 20s ,steps(45) infinite;
-
-    }
-    @keyframes cursor {
-        to{
-        border-left:2px solid black
-    }
-    }
-    @keyframes words {
-        0%,50%{
-            content("Im Beki Rabha,And i am a DEVELOPER making myself busy with differet projects of my mind");
+    <title>Contact - Beki Rabha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --text-light: #f4f4f4;
+            --text-accent: #e74c3c;
+            --border-color: rgba(255, 255, 255, 0.2);
         }
-        51%,100%{
-            content("And i am a DEVELOPER making myself busy with differet projects of my mind");
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--primary-bg);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
         }
-        
-    }
-    @keyframes typing{
-        10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
-            width: 0;
+
+        .contact-container {
+            max-width: 700px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--border-color);
+            position: relative;
+            z-index: 1;
         }
-        5%,20%,25%,40%,45%,60%,65%,80%,85%{
-            width: calc(100%+8px);
+
+        .animated-text {
+            color: var(--text-light);
+            font-size: 2.5em;
+            font-weight: 600;
+            min-height: 1.2em;
         }
-    }
+
+        .animated-text span {
+            position: relative;
+        }
+
+        .animated-text span::before {
+            content: "My email id is bekirabha369@gmail.com";
+            color: var(--text-accent);
+            animation: wordsContact 20s infinite;
+        }
+
+        .animated-text span::after {
+            content: '';
+            position: absolute;
+            width: calc(100% + 8px);
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Match container background */
+            border-left: 3px solid var(--text-accent);
+            right: -8px;
+            animation: cursorBlink 0.7s infinite, typingContact 20s steps(45) infinite;
+        }
+
+        @keyframes cursorBlink {
+            0%, 100% { border-left-color: var(--text-accent); }
+            50% { border-left-color: transparent; }
+        }
+
+        @keyframes wordsContact {
+            0%, 40% { content: "My email id is bekirabha369@gmail.com"; }
+            41%, 80% { content: "Feel free to reach out for collaborations or inquiries!"; }
+            81%, 100% { content: "I'm always open to new opportunities."; }
+        }
+
+        @keyframes typingContact {
+            10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% { width: 0; }
+            5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% { width: calc(100% + 8px); }
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 30px;
+                margin: 20px;
+            }
+            .animated-text {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-container {
+                padding: 20px;
+                margin: 15px;
+            }
+            .animated-text {
+                font-size: 1.5em;
+            }
+        }
     </style>
-    </head>
+</head>
 <body>
-    <div class="animated-text">
-        Hi ,<span></span>
+    <div class="contact-container">
+        <div class="animated-text">
+            <span></span>
+        </div>
     </div>
-
-</body></html>
+</body>
+</html>
